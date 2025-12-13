@@ -51,3 +51,4 @@ buttons.forEach((btn) => {
     display.value = formatNumber(rawValue);
   });
 });
+
