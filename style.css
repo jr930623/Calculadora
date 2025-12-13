@@ -27,8 +27,6 @@ body {
 
 .brand h2 {
   color: #62d2ff;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
   text-shadow: 0 0 10px #62d2ff;
 }
 
@@ -39,20 +37,24 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(98, 210, 255, 0.3);
   border: 1px solid rgba(98, 210, 255, 0.3);
-  animation: appear 0.5s ease-out;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* MANILLARES */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
+.dial {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #62d2ff, #0a0a0f);
+  box-shadow: 0 0 15px #62d2ff;
+}
+
+/* DISPLAY */
 #display {
   width: 100%;
   height: 70px;
@@ -64,9 +66,9 @@ body {
   text-align: right;
   border-radius: 10px;
   margin-bottom: 20px;
-  text-shadow: 0 0 5px #00ffcc;
 }
 
+/* BOTONES */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -82,40 +84,62 @@ body {
   border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn:hover {
   background: #1e1e2d;
-  transform: scale(1.07);
+  transform: scale(1.08);
 }
 
 .operator {
   background: #1b2b50;
   color: #62d2ff;
-  border: 1px solid #62d2ff;
-}
-
-.operator:hover {
-  background: #224075;
 }
 
 .equal {
   background: #00cc88;
-  border: 1px solid #00ffcc;
 }
 
-.equal:hover {
-  background: #00e6a0;
+.clear {
+  background: #501b1b;
+}
+
+.reverse {
+  background: #402020;
+  color: #ff6b6b;
 }
 
 .zero {
   grid-column: span 2;
 }
 
+/* ERROR */
+#display.error {
+  animation: shake 0.3s;
+  border-color: red;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 footer {
   margin-top: 20px;
   color: #62d2ff;
-  font-size: 0.9rem;
   opacity: 0.7;
 }
+
